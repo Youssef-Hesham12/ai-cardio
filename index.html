@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="theme-color" content="#101a2c" />
+    <meta
+      name="description"
+      content="CardioAssist AI academic doctor portal. Fictional patients and synthetic assessment workflows."
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script>
+      (() => {
+        const posters = {
+          "/": "/images/heart-study.png",
+          "/login": "/images/coronary-study.png",
+        };
+        const poster = posters[window.location.pathname];
+        if (!poster) return;
+        const preload = document.createElement("link");
+        preload.rel = "preload";
+        preload.as = "image";
+        preload.href = poster;
+        preload.fetchPriority = "high";
+        document.head.appendChild(preload);
+      })();
+    </script>
+    <title>CardioAssist AI | Doctor Portal</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
